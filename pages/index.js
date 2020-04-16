@@ -1,6 +1,6 @@
 import Link from 'next/link'
-
 class Index extends React.Component {
+
     constructor(props) {
         super(props);
 
@@ -22,12 +22,12 @@ class Index extends React.Component {
 
     componentDidMount() {
         let HD_Resize = e => {
-            console.log('어바웃에서 리사이즈를 실행했어', e)
+            console.log('인덱스에서 리사이즈를 실행했어', e)
         }
-        Rich.WIN.add('어바웃리사이즈', HD_Resize)
+        Rich.WIN.add('인덱스리사이즈', HD_Resize)
         HD_Resize()
         Rich.LOOPER.addMainLoop('test', time=> {
-            console.log('index에서 루프테스트' + time)
+            // console.log('index에서 루프테스트' + time)
         })
     }
 
@@ -41,7 +41,16 @@ class Index extends React.Component {
         );
     }
 }
-
+// Index.getInitialProps = async function() {
+//     const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
+//     const data = await res.json();
+//
+//     console.log(`Show data fetched. Count: ${data.length}`);
+//
+//     return {
+//         shows: data.map(entry => entry.show)
+//     };
+// };
 Index.prototype.test = function () {
     console.log('test')
 }
